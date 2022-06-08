@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-
-
-if __name__ == '__main__':
-    from sys import argv
-
-    if len(argv) == 1:
-        print('0 arguments.')
-    elif len(argv) == 2:
-        print('{:d} argument:'.format(len(argv) - 1))
+if __name__ == "__main__":
+    import sys
+    total = len(sys.argv)
+    if total <= 1:
+        print("0 arguments.")
     else:
-        print('{:d} arguments:'.format(len(argv) - 1))
+        if total == 2:
+            print("{:d} argument:".format(total - 1))
+        else:
+            print("{:d} arguments:".format(total - 1))
+        for i in range(1, total):
+            print("{:d}: {}".format(i, sys.argv[i]))
 
-    for i, arg in enumerate(argv[1:], start=1):
-        print('{:d}: {:s}'.format(i, arg))
