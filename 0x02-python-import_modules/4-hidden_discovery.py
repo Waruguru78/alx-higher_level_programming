@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     import hidden_4
-
-    name_list = dir(hidden_4)
-    for st in name_list:
-        if not st.startswith('__'):
-            print('{:s}'.format(st))
+    all_dir = dir(hidden_4)
+    for i in range(0, len(all_dir)):
+        if "__" != all_dir[i][:2]:
+            print(all_dir[i])
